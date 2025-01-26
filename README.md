@@ -4,12 +4,13 @@
 
 | Author(s) | Score | Estimated Cost Per task | Paper | Code | Description |
 | --------- | ----- | ----------------------- | ----- | ---- | ----------- |
-| Puget | 17% (estimate on public eval) [^1] | $0.03 [^2] | [A 2D nGPT model for ARC prize](https://github.com/jfpuget/ARC-AGI-Challenge-2024/blob/main/arc.pdf) | [Github](https://github.com/jfpuget/ARC-AGI-Challenge-2024/) | Trains a small (42M params; GPT2-like) transformer to predict output of ARC tasks. |
+| Puget | 17% (estimate on public eval) [^1] | $0.03 [^2] | [A 2D nGPT model for ARC prize](https://github.com/jfpuget/ARC-AGI-Challenge-2024/blob/main/arc.pdf) | [Github](https://github.com/jfpuget/ARC-AGI-Challenge-2024/) | Trains a small (42M params; GPT2-like) transformer to predict output of ARC tasks directly. |
 | Berman | 53.6% (semi private); 58.5% (public eval) | $20 [^3] | [Evolutionary Test-time Compute](https://jeremyberman.substack.com/p/how-i-got-a-record-536-on-arc-agi) | [Github](https://github.com/jerber/arc_agi); [Kaggle](https://www.kaggle.com/code/jerber/jeremy-arc) | Uses LLMs (Claude) to create Python programs and evolves these based on fitness function (how many examples solved completely; how many individual cells the function got correct). |
 
 | Author(s) | Score | Estimated Cost Per Task | Paper | Code | Description |
 |---|---|---|---|---|---|
-| Li et al. | Not Listed | Not applicable |([https://arxiv.org/abs/2411.02272](https://arxiv.org/abs/2411.02272)) | Not Listed | 1st Place Paper Award Winner. Combines induction and transduction for abstract reasoning. Achieved 54% accuracy on ARC-AGI (estimated) [1] |
+| Li et al. | 56.75 (public evaluation); 19% (private evaluation, limited by compute) | Unknown |[https://arxiv.org/abs/2411.02272](https://arxiv.org/abs/2411.02272) | [Github](https://github.com/xu3kev/BARC) | Ensembles program induction and transduction (direct solution prediction). Models based on Llama3.1-8B-instruct fine-tuned on hundreds of thousands of synthetic examples, with test-time training. 1st Place Paper Award Winner |
+
 | Akyürek et al. | 61.9% (Public Evaluation Set)¹ | $0.28 - $2.80² | [The Surprising Effectiveness of Test-Time Training for Abstract Reasoning](https://arxiv.org/abs/2411.07279) | [mhn/arc24](https://github.com/mhn/arc24) | 2nd Place Paper Award Winner. Employs test-time training for abstract reasoning. |
 | Bonnet & Macfarlane | Not Listed | Not applicable |([https://arxiv.org/abs/2311.14359](https://arxiv.org/abs/2311.14359)) | Not Listed | 3rd Place Paper Award Winner. Focuses on searching latent program spaces. |
 | the ARChitects (Franzen et al.) | 53.5% (Private Evaluation Set) | Not Listed | [The LLM ARChitect: Solving ARC-AGI Is a Matter of Perspective](https://arxiv.org/abs/2412.04604v2) | [ARChitects/arc-prize-2024](https://github.com/ARChitects/arc-prize-2024) | 1st Place High Score Winner. Leverages LLMs to guide program search and combines it with test-time training. |
