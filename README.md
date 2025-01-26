@@ -4,12 +4,12 @@
 
 | Author(s) | Score | Estimated Cost Per task | Paper | Code | Description |
 | --------- | ----- | ----------------------- | ----- | ---- | ----------- |
-| Puget | 17% (estimate on public eval) [^1] | $0.03 [^2] | [A 2D nGPT model for ARC prize](https://github.com/jfpuget/ARC-AGI-Challenge-2024/blob/main/arc.pdf) | [Github](https://github.com/jfpuget/ARC-AGI-Challenge-2024/) | Trains a small (42M params; GPT2-like) transformer to predict output of ARC tasks directly. |
+| Puget | 17% (estimate on public eval) [^1] | $0.03 [^2] | [A 2D nGPT model for ARC prize](https://github.com/jfpuget/ARC-AGI-Challenge-2024/blob/main/arc.pdf) | [Github](https://github.com/jfpuget/ARC-AGI-Challenge-2024/) | Trains a small (42M params; GPT2-like) transformer model to predict output of ARC tasks directly. A grid cell attends to all cells in the same row, and the same column. |
 | Berman | 53.6% (semi private); 58.5% (public eval) | $20 [^3] | [Evolutionary Test-time Compute](https://jeremyberman.substack.com/p/how-i-got-a-record-536-on-arc-agi) | [Github](https://github.com/jerber/arc_agi); [Kaggle](https://www.kaggle.com/code/jerber/jeremy-arc) | Uses LLMs (Claude) to create Python programs and evolves these based on fitness function (how many examples solved completely; how many individual cells the function got correct). |
+| Li et al. | 56.75% (public eval); 19% (private eval, limited by compute) | Unknown (>$0.18 per task for public eval [^4]) |[Combining Induction and Transduction for Abstract Reasoning](https://arxiv.org/abs/2411.02272) | [Github](https://github.com/xu3kev/BARC) | Ensembles program induction and transduction (direct solution prediction). Models based on Llama3.1-8B-instruct fine-tuned on hundreds of thousands of synthetic examples, with test-time training. 1st Place Paper Award Winner |
 
 | Author(s) | Score | Estimated Cost Per Task | Paper | Code | Description |
 |---|---|---|---|---|---|
-| Li et al. | 56.75 (public evaluation); 19% (private evaluation, limited by compute) | Unknown |[https://arxiv.org/abs/2411.02272](https://arxiv.org/abs/2411.02272) | [Github](https://github.com/xu3kev/BARC) | Ensembles program induction and transduction (direct solution prediction). Models based on Llama3.1-8B-instruct fine-tuned on hundreds of thousands of synthetic examples, with test-time training. 1st Place Paper Award Winner |
 
 | Akyürek et al. | 61.9% (Public Evaluation Set)¹ | $0.28 - $2.80² | [The Surprising Effectiveness of Test-Time Training for Abstract Reasoning](https://arxiv.org/abs/2411.07279) | [mhn/arc24](https://github.com/mhn/arc24) | 2nd Place Paper Award Winner. Employs test-time training for abstract reasoning. |
 | Bonnet & Macfarlane | Not Listed | Not applicable |([https://arxiv.org/abs/2311.14359](https://arxiv.org/abs/2311.14359)) | Not Listed | 3rd Place Paper Award Winner. Focuses on searching latent program spaces. |
@@ -32,6 +32,7 @@
 [^1]: The solution achieves up to 26% accuracy on constant-sized tasks on the public eval set. Performance on the private eval set is unknown. 
 [^2]: According to the paper, 100 tasks takes around 2 hours to run on Kaggle on (assumed) 1xP100 at ~$1.50 per hour.
 [^3]: Assuming maximum budget used for semi-private leaderboard (500 tasks for $10,000).
+[^4]: The paper states that "Our flagship model is too expensive to run on the private test set hosted by Kaggle", so this must exceed ~$0.18 per task.
 
 ¹ Accuracy on the public evaluation set[2].
 ² Assuming a runtime of 1-10 minutes per task on an NVIDIA Tesla T4 GPU, which costs $0.28 per hour on Google Cloud[2].
