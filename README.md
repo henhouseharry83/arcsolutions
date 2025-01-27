@@ -10,6 +10,7 @@
 | Akyürek et al. | 53% (public eval); 62.8% (public eval, ensembled with Li at al.); 47.5% (semi-private, ensembled with Li et al.) | $0.44[^5] | [The Surprising Effectiveness of Test-Time Training for Abstract Reasoning](https://arxiv.org/abs/2411.07279) | [Github](https://github.com/mhn/arc24); [Kaggle](https://www.kaggle.com/code/xu3cpn/ensemble-induction-and-transduction) | Employs test-time training by fine-tuning 8B Llama 3 model on task variations, including example omissions and geometrical transformations. Also employs a hierarchical voting strategy at test-time, and initial fine-tuning of the model. Best score is an ensemble with Li et al. 2nd Place Paper Award Winner |
 | Bonnet et al. | 9.9% (public eval); 3% (private) | Unknown |[Searching Latent Program Spaces](https://github.com/clement-bonnet/lpn/blob/7f86b1d11ea37ba173700dbac8604393eac6da37/paper.pdf) | [Github](https://github.com/clement-bonnet/lpn) | Introduces a Latent Program Network (LPN), which is a neural network that learns the latent space of possible programs. In addition, gradient-based test-time search is performed on the latent space. 3rd Place Paper Award Winner. |
 | Franzen et al. (the ARChitects) | 53.5% (private) 56.5% (private, after competition deadline) | $0.08 [^6] | [The LLM ARChitect: Solving ARC-AGI Is a Matter of Perspective](https://github.com/da-fr/arc-prize-2024/blob/main/the_architects.pdf) | [Github](https://github.com/da-fr/arc-prize-2024); [Kaggle](https://www.kaggle.com/code/gregkamradt/arc-prize-v8?scriptVersionId=211457842) | Uses fine-tuning and test-time training of NeMo-Minitron-8B LLM to perform transduction (direct output prediction). Two phases of fine-tuning are performed before test time on re-arc and geometric transformations, and one phase is performed at test time on geometric and example omission / reordering. A depth-first search scoring method is employed, along with a probabalistic approach for final candidate selection. The number of tokens in the LLM is reduced to 64 symbols. |
+| Barbadillo | 40% (private) | $0.18 [^8] | [Omni-ARC](https://arxiv.org/abs/2412.04604v2) | [Kaggle](https://www.kaggle.com/code/ironbar/single-task-test-time-fine-tuning-for-arc24?scriptVersionId=199282752) | Fine-tunes a Qwen2.5-0.5B-Instruct LLM based on a large dataset of various ARC and ARC-like tasks, included data augmentation. Test-time training is performed, also using data augmentation. Final predictions are obtained using a voting system. The solution is ensembled with some solutions from the 2020 competition [^8] |
 
 
 | Author(s) | Score | Estimated Cost Per Task | Paper | Code | Description |
@@ -17,7 +18,7 @@
 
 
 
-| Guillermo Barbadillo | 40% (Private Evaluation Set) | $0.004 - $0.40³ | [Omni-ARC](https://arxiv.org/abs/2412.04604v2) | [gbarbadillo/omni-arc](https://github.com/gbarbadillo/omni-arc) | 2nd Place High Score Winner. Employs a hybrid approach combining program synthesis with a transduction model. |
+
 | alijs | 40% (Private Evaluation Set) | Not Listed | Not Listed | [alijs/arc-prize-2024](https://github.com/alijs/arc-prize-2024) | 3rd Place High Score Winner. Details of the approach not publicly available. |
 | William Wu | 37% (Private Evaluation Set) | Not Listed | Not Listed | [wuziheng/arc-prize-2024](https://github.com/wuziheng/arc-prize-2024) | 4th Place High Score Winner. Details of the approach not publicly available. |
 | PoohAI | 37% (Private Evaluation Set) | Not Listed | Not Listed | [pooh-ai/arc-prize-2024](https://github.com/pooh-ai/arc-prize-2024) | 5th Place High Score Winner. Details of the approach not publicly available. |
@@ -33,12 +34,13 @@
 | Ouellette | Not Listed | Not Listed | [Towards Efficient Neurally-Guided Program Induction for ARC-AGI](https://arxiv.org/abs/2411.17708) | [SimonOuellette35/GridCoder2024](https://github.com/SimonOuellette35/GridCoder2024) | Explores efficient neurally-guided program induction for ARC-AGI. |
 
 [^1]: The solution achieves up to 26% accuracy on constant-sized tasks on the public eval set. Performance on the private eval set is unknown. 
-[^2]: According to the paper, 100 tasks takes around 2 hours to run on Kaggle. Assuming 1xP100 at ~$1.50 per hour.
+[^2]: According to the paper, 100 tasks takes around 2 hours to run on Kaggle. Assuming 1xP100 at ~$1.50 per hour (specific GPU is not known).
 [^3]: Assuming maximum budget used for semi-private leaderboard (500 tasks for $10,000).
 [^4]: The paper states that "Our flagship model is too expensive to run on the private test set hosted by Kaggle", so this must exceed ~$0.18 per task (12 hours x $1.50 for a P100 GPU, for 100 tasks).
 [^5]: Based on paper's stated runtime of "12 hours/100 tasks runtime on an A100 GPU for Llama 8B", and A100 GPU cost of $3.67 per hour.
 [^6]: Assuming maximum runtime of 12 hours for private leaderboard with 2xT4 GPUs at $0.70 per hour.
-
+[^7]: Assuming maximum runtime of 12 hours for private leaderboard with 1xP100 GPU at $1.50 per hour (specific GPU is not known).
+[^8]: See https://www.kaggle.com/code/mehrankazeminia/3-arc24-developed-2020-winning-solutions
 
 ¹ Accuracy on the public evaluation set[2].
 ² Assuming a runtime of 1-10 minutes per task on an NVIDIA Tesla T4 GPU, which costs $0.28 per hour on Google Cloud[2].
