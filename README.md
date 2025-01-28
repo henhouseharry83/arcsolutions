@@ -17,6 +17,7 @@
 | OpenAI o3 (high-efficiency) | 75.7% (semi-private) 82.6% (public eval) | $20 (semi-private); $17 (public) [^11]  | Not available yet | [OpenAI o3 Breakthrough High Score on ARC-AGI-Pub](https://arcprize.org/blog/oai-o3-pub-breakthrough) | Uses OpenAI's o3 model. Prompting details are not (yet) known. |
 | OpenAI o3 (low-efficiency) | 87.5% (semi-private) 91.5%	(public eval) | $3440 (semi-private); $2924 (public) [^12]  | Not available yet | [OpenAI o3 Breakthrough High Score on ARC-AGI-Pub](https://arcprize.org/blog/oai-o3-pub-breakthrough) | Uses OpenAI's o3 model. Prompting details are not (yet) known. |
 | Wind (icecuber) | 20.6% (private) | $0.03 [^13] | [2020 1st Place Solution Documentation](https://github.com/top-quarks/ARC-solution/blob/master/ARC-solution_documentation.pdf)  | [Github](https://github.com/top-quarks/ARC-solution); [Kaggle](https://www.kaggle.com/code/icecuber/arc-1st-place-solution) | Uses brute force program search and a hand-crafted DSL of grid transformation operations. Uses C++, for speed. |
+| Fletcher-Hill | 41% (public eval subset) | Unknown | [Mini-ARC: Solving Abstraction and Reasoning Puzzles with Small Transformer Models](https://arxiv.org/abs/2412.04604) | [pfletcherhill/mini-arc](https://github.com/pfletcherhill/mini-arc) | Uses a transformer model with an embedding layer to convert discrete colours to vectors, a and custom positional encoding scheme that represents a cell’s 2-D position as well as it’s position in the larger context. The model has ~67 million parameters, and is (currently) limited to a maximum grid size of 12x12. The model was trained on a dataset of ~830,000 puzzles from various sources. Test-time training was employed by sampling input-output pairs from the examples to make "new" puzzles. |
 
 | Author(s) | Score | Estimated Cost Per Task | Paper | Code | Description |
 |---|---|---|---|---|---|
@@ -24,7 +25,7 @@
 
 
 
-| Fletcher-Hill | 41% (Public Evaluation Set, subset)¹³ | $0.08 - $0.80¹⁴ | [Mini-ARC: Solving Abstraction and Reasoning Puzzles with Small Transformer Models](https://arxiv.org/abs/2412.04604) | [pfletcherhill/mini-arc](https://github.com/pfletcherhill/mini-arc) | Focuses on solving ARC puzzles with small transformer models. |
+
 | Ouellette | Not Listed | Not Listed | [Towards Efficient Neurally-Guided Program Induction for ARC-AGI](https://arxiv.org/abs/2411.17708) | [SimonOuellette35/GridCoder2024](https://github.com/SimonOuellette35/GridCoder2024) | Explores efficient neurally-guided program induction for ARC-AGI. |
 
 [^1]: The solution achieves up to 26% accuracy on constant-sized tasks on the public eval set. Performance on the private eval set is unknown. 
