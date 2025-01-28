@@ -16,15 +16,14 @@
 | Greenblatt | 43% (semi-private); 42% (public eval) | $20 [^10] | [Getting 50% (SoTA) on ARC-AGI with GPT-4o](https://redwoodresearch.substack.com/p/getting-50-sota-on-arc-agi-with-gpt) | [Kaggle](https://www.kaggle.com/code/rgreenblatt/rg-basic-ported-submission) | Uses GPT-4o generate a large number of Python implementations (around 5,000) for each task. GPT-4o is then asked to revise the code to make it correct, based on what a subset of the most promising programs actually produces. A further ~3,000 programs are then generated to attempt to fix the original programs. |
 | OpenAI o3 (high-efficiency) | 75.7% (semi-private) 82.6% (public eval) | $20 (semi-private); $17 (public) [^11]  | Not available yet | [OpenAI o3 Breakthrough High Score on ARC-AGI-Pub](https://arcprize.org/blog/oai-o3-pub-breakthrough) | Uses OpenAI's o3 model. Prompting details are not (yet) known. |
 | OpenAI o3 (low-efficiency) | 87.5% (semi-private) 91.5%	(public eval) | $3440 (semi-private); $2924 (public) [^12]  | Not available yet | [OpenAI o3 Breakthrough High Score on ARC-AGI-Pub](https://arcprize.org/blog/oai-o3-pub-breakthrough) | Uses OpenAI's o3 model. Prompting details are not (yet) known. |
+| Wind (aka icecuber) | 20.6% (private) | $0.03 [^13] | [2020 1st Place Solution Documentation](https://github.com/top-quarks/ARC-solution/blob/master/ARC-solution_documentation.pdf)  | [Github](https://github.com/top-quarks/ARC-solution); [Kaggle](https://www.kaggle.com/code/icecuber/arc-1st-place-solution) | Uses brute force program search and a hand-crafted DSL of grid transformation operations. Uses C++, for speed. |
 
 | Author(s) | Score | Estimated Cost Per Task | Paper | Code | Description |
 |---|---|---|---|---|---|
 
 
 
-| mhn | 40% (Public Evaluation Set) | $0.02⁹ | Not Listed | [mhn/arc24](https://github.com/mhn/arc24) | Fine-tunes a transformer on multiple tasks related to ARC problems, incorporating test-time fine-tuning. |
-| luciano | 30% (Public Evaluation Set) | $0.0001¹⁰ | Not Listed | [luciano/arc24](https://github.com/luciano/arc24) | Fine-tunes Qwen2.5-0.5B-Instruct on publicly available ARC datasets, uses test-time fine-tuning, data augmentation, and ensembles with the 2020 public solution. |
-| 2020 Kaggle Winner (icecuber) | 20% (Private Evaluation Set) | Not applicable¹¹ | Not Listed | Not Listed | Used a DSL with 142 hand-crafted grid operations. |
+
 | Fletcher-Hill | 41% (Public Evaluation Set, subset)¹³ | $0.08 - $0.80¹⁴ | [Mini-ARC: Solving Abstraction and Reasoning Puzzles with Small Transformer Models](https://arxiv.org/abs/2412.04604) | [pfletcherhill/mini-arc](https://github.com/pfletcherhill/mini-arc) | Focuses on solving ARC puzzles with small transformer models. |
 | Ouellette | Not Listed | Not Listed | [Towards Efficient Neurally-Guided Program Induction for ARC-AGI](https://arxiv.org/abs/2411.17708) | [SimonOuellette35/GridCoder2024](https://github.com/SimonOuellette35/GridCoder2024) | Explores efficient neurally-guided program induction for ARC-AGI. |
 
@@ -40,7 +39,7 @@
 [^10]: Assuming maximum budget used for semi-private leaderboard (500 tasks for $10,000).
 [^11]: Based on figures on https://arcprize.org/blog/oai-o3-pub-breakthrough
 [^12]: Based on figures on https://arcprize.org/blog/oai-o3-pub-breakthrough and the statement that the high compute version used compute that was "roughly 172x the low-compute configuration" (this assumes that costs of compute grows linearly).
-
+[^13]: Based on 9 hours runtime on CPU with specs from https://www.kaggle.com/docs/notebooks). Estimated CPU cost is $0.32 per hour.
 
 ¹ Accuracy on the public evaluation set[2].
 ² Assuming a runtime of 1-10 minutes per task on an NVIDIA Tesla T4 GPU, which costs $0.28 per hour on Google Cloud[2].
