@@ -14,19 +14,22 @@
 | Liukis | 40% (private) | $0.18 [^8] | [ARC Prize 2024 4th place solution¶](https://www.kaggle.com/code/gregkamradt/arc-prize-2024-solution-4th-place-score-40-811b7) | [Kaggle](https://www.kaggle.com/code/gregkamradt/arc-prize-2024-solution-4th-place-score-40-811b72) | A guided brute-force approach to try various algorithms / functions was ensembled with some solutions from the 2020 competition. |
 | Mikhalev et al. (PoohAI) | 37% (Private Evaluation Set) | $0.18 [^9] | [Solution by PoohAI](https://drive.google.com/file/d/1kTom9M54LVfLbPDQHpGgfUs3y1IYIpy2/view) | [Kaggle](https://www.kaggle.com/code/gregkamradt/arc-prize-2024-8th-place-solution) | Various approaches from the 2020 competition were ensembled. Post-processing filters are used to remove bad attempts from the ensemble of solutions. |
 | Greenblatt | 43% (semi-private); 42% (public eval) | $20 [^10] | [Getting 50% (SoTA) on ARC-AGI with GPT-4o](https://redwoodresearch.substack.com/p/getting-50-sota-on-arc-agi-with-gpt) | [Kaggle](https://www.kaggle.com/code/rgreenblatt/rg-basic-ported-submission) | Uses GPT-4o generate a large number of Python implementations (around 5,000) for each task. GPT-4o is then asked to revise the code to make it correct, based on what a subset of the most promising programs actually produces. A further ~3,000 programs are then generated to attempt to fix the original programs. |
-| OpenAI o3 (high-efficiency) | 75.7% (semi-private) 82.6% (public eval) | $20 (semi-private); $17 (public) [^11]  | Not available yet | [OpenAI o3 Breakthrough High Score on ARC-AGI-Pub](https://arcprize.org/blog/oai-o3-pub-breakthrough) | Uses OpenAI's o3 model. Prompting details are not (yet) known. |
+| OpenAI o3 (high-efficiency) | 75.7% (semi-private) 82.6% (public eval) | $20 (semi-private); $17 (public) [^11]  | Not available yet | [OpenAI o3 Breakthrough High Score on ARC-AGI-Pub](https://arcprize.org/blog/oai-o3-pub-breakthrough) | Unknown. Assuming a similar procedure for OpenAI o1, Anthropic Claude etc, but this is not stated explicity anywhere. |
 | OpenAI o3 (low-efficiency) | 87.5% (semi-private) 91.5%	(public eval) | $3440 (semi-private); $2924 (public) [^12]  | Not available yet | [OpenAI o3 Breakthrough High Score on ARC-AGI-Pub](https://arcprize.org/blog/oai-o3-pub-breakthrough) | Uses OpenAI's o3 model. Prompting details are not (yet) known. |
 | Wind (icecuber) | 20.6% (private) | $0.03 [^13] | [2020 1st Place Solution Documentation](https://github.com/top-quarks/ARC-solution/blob/master/ARC-solution_documentation.pdf)  | [Github](https://github.com/top-quarks/ARC-solution); [Kaggle](https://www.kaggle.com/code/icecuber/arc-1st-place-solution) | Uses brute force program search and a hand-crafted DSL of grid transformation operations. Uses C++, for speed. |
 | Fletcher-Hill | 41% (public eval subset) | Unknown | [Mini-ARC: Solving Abstraction and Reasoning Puzzles with Small Transformer Models](https://arxiv.org/abs/2412.04604) | [pfletcherhill/mini-arc](https://github.com/pfletcherhill/mini-arc) | Uses a transformer model with an embedding layer to convert discrete colours to vectors, a and custom positional encoding scheme that represents a cell’s 2-D position as well as it’s position in the larger context. The model has ~67 million parameters, and is (currently) limited to a maximum grid size of 12x12. The model was trained on a dataset of ~830,000 puzzles from various sources. Test-time training was employed by sampling input-output pairs from the examples to make "new" puzzles. |
+| OpenAI o1 | 35% (semi-private) | $1.31 [^14]  | [An Analysis of DeepSeek's R1-Zero and R1](https://arcprize.org/blog/r1-zero-r1-results-analysis) | [Kaggle](https://www.kaggle.com/code/gregkamradt/using-frontier-models-on-arc-agi-via-langchain) | Unknown. Assuming a similar procedure for [o1-preview](https://arcprize.org/2024-results), Anthropic Claude etc, but this is not stated explicity anywhere. |
+| Anthropic Claude 3.5 Sonnet | 14% (semi-private); 21% (public eval) | Unknown  | [ARC Prize 2024 Results](https://arcprize.org/2024-results) | [Kaggle](https://www.kaggle.com/code/gregkamradt/using-frontier-models-on-arc-agi-via-langchain) | Uses simple promoting, asking the LLM to solve the problem directly (transduction). |
+| Google Gemini 1.5 | 8% (semi-private); 4.5% (public eval) | Unknown  | [ARC Prize 2024 Results](https://arcprize.org/2024-results) | [Kaggle](https://www.kaggle.com/code/gregkamradt/using-frontier-models-on-arc-agi-via-langchain) | Uses simple promoting, asking the LLM to solve the problem directly (transduction). |
+| Deepseek r1-zero | 14% (semi-private) | $0.11 [^14]  | [An Analysis of DeepSeek's R1-Zero and R1](https://arcprize.org/blog/r1-zero-r1-results-analysis) | Unknown | Unknown. Assuming a similar procedure for OpenAI o1, Anthropic Claude etc, but this is not stated explicity anywhere. |
+| Deepseek r1 | 15.8% (semi-private) | $0.06 [^14]  | [An Analysis of DeepSeek's R1-Zero and R1](https://arcprize.org/blog/r1-zero-r1-results-analysis) | Unknown | Unknown. Assuming a similar procedure for OpenAI o1, Anthropic Claude etc, but this is not stated explicity anywhere. |
 
 | Author(s) | Score | Estimated Cost Per Task | Paper | Code | Description |
 |---|---|---|---|---|---|
-
-
-
-
-
 | Ouellette | Not Listed | Not Listed | [Towards Efficient Neurally-Guided Program Induction for ARC-AGI](https://arxiv.org/abs/2411.17708) | [SimonOuellette35/GridCoder2024](https://github.com/SimonOuellette35/GridCoder2024) | Explores efficient neurally-guided program induction for ARC-AGI. |
+
+
+
 
 [^1]: The solution achieves up to 26% accuracy on constant-sized tasks on the public eval set. Performance on the private eval set is unknown. 
 [^2]: According to the paper, 100 tasks takes around 2 hours to run on Kaggle. Assuming 1xP100 at ~$1.50 per hour (specific GPU is not known).
@@ -41,6 +44,7 @@
 [^11]: Based on figures on https://arcprize.org/blog/oai-o3-pub-breakthrough
 [^12]: Based on figures on https://arcprize.org/blog/oai-o3-pub-breakthrough and the statement that the high compute version used compute that was "roughly 172x the low-compute configuration" (this assumes that costs of compute grows linearly).
 [^13]: Based on 9 hours runtime on CPU with specs from https://www.kaggle.com/docs/notebooks). Estimated CPU cost is $0.32 per hour.
+[^14]: From https://arcprize.org/blog/r1-zero-r1-results-analysis
 
 ¹ Accuracy on the public evaluation set[2].
 ² Assuming a runtime of 1-10 minutes per task on an NVIDIA Tesla T4 GPU, which costs $0.28 per hour on Google Cloud[2].
