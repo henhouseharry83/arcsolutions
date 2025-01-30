@@ -23,13 +23,7 @@
 | Google Gemini 1.5 | 8% (semi-private); 4.5% (public eval) | Unknown  | [ARC Prize 2024 Results](https://arcprize.org/2024-results) | [Kaggle](https://www.kaggle.com/code/gregkamradt/using-frontier-models-on-arc-agi-via-langchain) | Uses simple promoting, asking the LLM to solve the problem directly (transduction). |
 | Deepseek r1-zero | 14% (semi-private) | $0.11 [^14]  | [An Analysis of DeepSeek's R1-Zero and R1](https://arcprize.org/blog/r1-zero-r1-results-analysis) | Unknown | Unknown. Assuming a similar procedure for [o1-preview](https://arcprize.org/2024-results) etc, but this is not stated explicity anywhere. |
 | Deepseek r1 | 15.8% (semi-private) | $0.06 [^14]  | [An Analysis of DeepSeek's R1-Zero and R1](https://arcprize.org/blog/r1-zero-r1-results-analysis) | Unknown | Unknown. Assuming a similar procedure for [o1-preview](https://arcprize.org/2024-results) etc, but this is not stated explicity anywhere. |
-
-| Author(s) | Score | Estimated Cost Per Task | Paper | Code | Description |
-|---|---|---|---|---|---|
-| Ouellette | Not Listed | Not Listed | [Towards Efficient Neurally-Guided Program Induction for ARC-AGI](https://arxiv.org/abs/2411.17708) | [SimonOuellette35/GridCoder2024](https://github.com/SimonOuellette35/GridCoder2024) | Explores efficient neurally-guided program induction for ARC-AGI. |
-
-
-
+| Ouellette | 8.25% (public eval); 1% (private) | $0.13 [^15] | [Towards Efficient Neurally-Guided Program Induction for ARC-AGI](https://drive.google.com/file/d/1sFlK3mhz8kH2agdE379o0ODQWYkrSD0b/view) | [Github](https://github.com/SimonOuellette35/GridCoder2024) | Introduces GridCoder, an algorithm that performs probability-based search of programs, based on transformer generated token probability sequences. A DSL consisting of grid-to-grid transformations and object transformation and filtering is used to generate the programs. The DSl is also used to mutate ARC tasks to generate training data. |
 
 [^1]: The solution achieves up to 26% accuracy on constant-sized tasks on the public eval set. Performance on the private eval set is unknown. 
 [^2]: According to the paper, 100 tasks takes around 2 hours to run on Kaggle. Assuming 1xP100 at ~$1.50 per hour (specific GPU is not known).
@@ -45,19 +39,4 @@
 [^12]: Based on figures on https://arcprize.org/blog/oai-o3-pub-breakthrough and the statement that the high compute version used compute that was "roughly 172x the low-compute configuration" (this assumes that costs of compute grows linearly).
 [^13]: Based on 9 hours runtime on CPU with specs from https://www.kaggle.com/docs/notebooks). Estimated CPU cost is $0.32 per hour.
 [^14]: From https://arcprize.org/blog/r1-zero-r1-results-analysis
-
-¹ Accuracy on the public evaluation set[2].
-² Assuming a runtime of 1-10 minutes per task on an NVIDIA Tesla T4 GPU, which costs $0.28 per hour on Google Cloud[2].
-³ Assuming a runtime of 6-60 minutes per task on an NVIDIA Tesla T4 GPU[3].
-⁴ Based on a cost of $200 for 75 minutes of runtime on the training set, extrapolated to the full evaluation set[4].
-⁵ Based on consuming 33M tokens with a retail cost of $0.00006 per 1k tokens for OpenAI o3[5].
-⁶ Based on consuming 33M tokens with a retail cost of $0.00006 per 1k tokens for OpenAI o3[6].
-⁷ Accuracy on the public test set[7].
-⁸ Based on 8,000 Python implementations per problem and assuming $0.00002 per 1k tokens for GPT-4[7].
-⁹ Based on training a transformer model with an estimated cost of $8 per hour for 10 hours[7].
-¹⁰ Based on fine-tuning Qwen2.5-0.5B-Instruct with an estimated cost of $0.10 per hour for 2 hours[7].
-¹¹ Cost information not available for the 2020 Kaggle competition winner[8].
-¹² Based on training for one day on an 8 A100 GPU machine, assuming a cost of $14 per hour per A100 GPU on Google Cloud[9].
-¹³ Accuracy on a subset of the public evaluation set with grids no larger than 12x12[10].
-¹⁴ Assuming a runtime of 5-50 minutes per task on an NVIDIA Tesla T4 GPU[10].
-
+[^15]: Based on stated 5 minutes per task on 1xP100 GPU at $1.50 per hour (specific CPU/GPU is not known).
